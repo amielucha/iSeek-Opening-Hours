@@ -6,7 +6,7 @@
  * This file is used to markup the public-facing aspects of the plugin.
  *
  * @link       https://amielucha.com/
- * @since      0.1.0
+ * @since      1.0.0
  *
  * @package    Iseek_Oh
  * @subpackage Iseek_Oh/public/partials
