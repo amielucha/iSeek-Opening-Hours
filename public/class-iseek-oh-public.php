@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://amielucha.com/
- * @since      1.0.0
+ * @since      0.1.0
  *
  * @package    Iseek_Oh
  * @subpackage Iseek_Oh/public
@@ -25,7 +25,7 @@ class Iseek_Oh_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Iseek_Oh_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Iseek_Oh_Public {
 	/**
 	 * Array of weekdays.
 	 *
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 * @access   private
 	 * @var      array    $weekdays    Array of weekdays.
 	 */
@@ -52,7 +52,7 @@ class Iseek_Oh_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -67,7 +67,7 @@ class Iseek_Oh_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 */
 	public function enqueue_styles() {
 
@@ -90,7 +90,7 @@ class Iseek_Oh_Public {
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 */
 	public function enqueue_scripts() {
 
@@ -213,7 +213,7 @@ if ( ! function_exists( 'iseek_opening_hours' ) ) {
 
 if ( ! function_exists( 'get_iseek_is_open' ) ) {
   function get_iseek_is_open() {
-		return ( Iseek_Oh_Public::is_open() ) ? '<div class="iseek-opening-hours-is-open">' . __('We are open today until ', 'iseek-oh') . Iseek_Oh_Public::closes_today_at() . '</div>' : '<div class="iseek-opening-hours-is-open">' . __('We are closed now.', 'iseek-oh') . '</div>';
+		return ( Iseek_Oh_Public::is_open() ) ? '<div class="iseek-opening-hours-is-open">' . __('We are open today until ', 'iseek-oh') . date("g:i a", strtotime(Iseek_Oh_Public::closes_today_at())) . '</div>' : '<div class="iseek-opening-hours-is-open">' . __('We are closed now.', 'iseek-oh') . '</div>';
   }
 }
 
